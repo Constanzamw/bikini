@@ -34,7 +34,7 @@ module.exports = (sequelize) => {
         defaultValue: "admin",
       },
       disabled: {
-        type: DataTypes.STRING,
+        type: DataTypes.BOOLEAN,
         defaultValue: false,
       },
     },
