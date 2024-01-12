@@ -5,6 +5,7 @@ const createAdminHandler = require("../handlers/createAdminHandler")
 const deletedPublicationHandler = require("../handlers/deletePublicationHandler")
 const getAdminHandler = require("../handlers/getAdminHandler")
 const putPublicationHandler = require("../handlers/putPublicationHandler")
+const getPubliByIdHandler = require("../handlers/getPubliByIdHandler")
 
 const router = Router();
 
@@ -12,6 +13,7 @@ router.post("/admin", createAdminHandler)
 router.get("/allAdmin", getAdminHandler)
 router.post("/create", createPublicationHandler)
 router.get("/publications", getPublicationsHandler)
+router.get("/publications/:id", getPubliByIdHandler)
 router.put("/update/:id", putPublicationHandler)
 router.delete("/delete/:id", deletedPublicationHandler)
 
