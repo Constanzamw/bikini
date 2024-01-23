@@ -10,7 +10,7 @@ const getPubliByIdHandler = require("../handlers/getPubliByIdHandler")
 const router = Router();
 
 router.post("/admin", createAdminHandler)
-router.get("/allAdmin", getAdminHandler)
+router.get("/admins", getAdminHandler)
 router.post("/publications", createPublicationHandler)
 router.get("/publications", getPublicationsHandler)
 router.get("/publications/:id", getPubliByIdHandler)
