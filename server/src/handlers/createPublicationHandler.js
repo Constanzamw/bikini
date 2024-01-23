@@ -4,11 +4,11 @@ const createPublicationHandler = async (req, res) => {
   const { adminId, name, description, image, price } = req.body;
   try {
     const newPublication = await createPublication(
-        adminId,
-        name,
+      adminId,
+      name,
       description,
+      image,
       price,
-      image
     );
     res.status(201).json(newPublication);
   } catch (error) {

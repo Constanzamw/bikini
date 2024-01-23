@@ -11,11 +11,11 @@ const router = Router();
 
 router.post("/admin", createAdminHandler)
 router.get("/allAdmin", getAdminHandler)
-router.post("/create", createPublicationHandler)
+router.post("/publications", createPublicationHandler)
 router.get("/publications", getPublicationsHandler)
 router.get("/publications/:id", getPubliByIdHandler)
 router.put("/update/:id", putPublicationHandler)
-router.delete("/delete/:id", deletedPublicationHandler)
+router.delete("/publications/:id", deletedPublicationHandler)
 
 
 
