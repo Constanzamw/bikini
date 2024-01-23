@@ -1,7 +1,7 @@
 const createPublication = require("../controllers/createPublication");
 
 const createPublicationHandler = async (req, res) => {
-  const { adminId, name, description, image, price,cat } = req.body;
+  const { adminId, name, description, image, price,cat, size } = req.body;
   try {
     const newPublication = await createPublication(
       adminId,
@@ -9,7 +9,8 @@ const createPublicationHandler = async (req, res) => {
       description,
       image,
       price,
-      cat
+      cat,
+      size
     );
     res.status(201).json(newPublication);
   } catch (error) {

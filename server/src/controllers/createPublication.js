@@ -1,6 +1,6 @@
 const { Publication, Admin } = require("../db");
 
-const createPublication = async (adminId, name, description, image, price, cat) => {
+const createPublication = async (adminId, name, description, image, price, cat, size) => {
   try {
     // Verifica si el admin existe antes de proceder
     const admin = await Admin.findByPk(adminId);
@@ -13,7 +13,8 @@ const createPublication = async (adminId, name, description, image, price, cat) 
       description,
       price,
       image,
-      cat
+      cat,
+      size
     })
 
     // Asociar la publicación al admin
