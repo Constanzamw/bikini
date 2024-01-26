@@ -83,9 +83,9 @@ const [showDropdown, setShowDropdown] = useState(false);
             </Link>
           </li>
           <li>
-            <Link href="/explore">
+            <Link href="/auth">
               <span className=" hover:text-primary cursor-pointer hover:border-primary pb-1 font-newrocker text-[19px] border-b-[2px]  border-gray-200">
-                Registrarse
+                LogIn
               </span>
             </Link>
           </li>
