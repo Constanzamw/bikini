@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         ></link>
       </head>
-        <body className="bg-secondary-100 text-gray-300">
+        <body className="">
       {/* <body className={inter.className}>{children}</body> */}
       <Providers>{children}</Providers>
       </body>

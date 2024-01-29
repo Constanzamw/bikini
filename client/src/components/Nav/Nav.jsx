@@ -5,7 +5,8 @@ import Image from "next/image";
 // import "@szhsin/react-menu/dist/index.css";
 // import "@szhsin/react-menu/dist/transitions/slide.css";
 import { useDispatch, useSelector } from "react-redux";
-
+//import logoindi from "../../assets/logoindi.png"
+import logoindi from "../../../public/logoindi.png";;
 import { useRouter } from "next/navigation";
 
 export default function Nav() {
@@ -36,62 +37,43 @@ const [showDropdown, setShowDropdown] = useState(false);
   
 
   return (
-    <nav className="bg-transparent py-8 px-8 text-artistfont mb-[30px] ">
-      <ul className="flex flex-col sm:flex-row  items-center justify-center sm:justify-between gap-8">
-        <div className="text-center sm:flex sm:justify-center">
-          <li>
-            <Link href="/">
-              <span className="font-rocksalt text-2xl ">
-                India
-       
-              </span>
-            </Link>
-          </li>
-        </div>
+    <nav className="bg-pink-200/55 py-8 px-8 text-artistfont mb-[30px]">
+      <div className="flex items-center justify-between">
+        <Link href="/">
+          <p className="font-rocksalt text-2xl text-pink-600 font-bold font flex items-center gap-x-2">
+            <span>Indi Bikinis</span>
+            <Image src="/logoindi.png" alt="Logo" width={35} height={35} />
+          </p>
+        </Link>
+
         <div className="flex items-center gap-x-8">
-          <li>
-            <div
-              className="cursor-pointer"
-              onClick={handleDropdownToggle}
-            >
-              <span className="hover:text-primary  hover:border-primary pb-1 font-newrocker text-[19px] border-b-[2px] border-gray-200">
-                COMPRA TU BIKINI
-              </span>
-            </div>
-            {showDropdown && (
-              <ul className="absolute bg-white border border-gray-300 mt-2 p-2">
-                <li onClick={() => handleLinkClick("/corpinos")}>Corpiños</li>
-                <li onClick={() => handleLinkClick("/bombachas")}>Bombachas</li>
-                <li onClick={() => handleLinkClick("/enterizas")}>Enterizas</li>
-                <li onClick={() => handleLinkClick("/kids")}>Kids</li>
+          <div className="cursor-pointer" onClick={handleDropdownToggle}>
+            <span className="hover:text-primary hover:border-primary pb-1 font-newrocker text-[19px] border-b-[2px] border-gray-200">
+              COMPRA TU BIKINI
+            </span>
+          </div>
+          {showDropdown && (
+              <ul className="absolute bg-white/25 border border-gray-300 mt-[9rem] p-2">
+                <li className="text-black/50 font-bold" onClick={() => handleLinkClick("/corpinos")}>Corpiños</li>
+                <li className="text-black/50 font-bold" onClick={() => handleLinkClick("/bombachas")}>Bombachas</li>
+                <li className="text-black/50 font-bold" onClick={() => handleLinkClick("/enterizas")}>Enterizas</li>
+                <li className="text-black/50 font-bold" onClick={() => handleLinkClick("/kids")}>Kids</li>
               </ul>
             )}
-          </li>
-        {/* <div className="flex items-center gap-x-8">
-        <li>
-            <Link href="/about">
-              <span className="hover:text-primary  hover:border-primary pb-1 font-newrocker text-[19px] border-b-[2px] border-gray-200">
-                COMPRA TU BIKINI
-              </span>
-            </Link>
-          </li> */}
-          <li>
-            <Link href="/about">
-              <span className="hover:text-primary  hover:border-primary pb-1 font-newrocker text-[19px] border-b-[2px] border-gray-200">
-                CUAL ES MI TALLE?
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link href="/auth">
-              <span className=" hover:text-primary cursor-pointer hover:border-primary pb-1 font-newrocker text-[19px] border-b-[2px]  border-gray-200">
-                LogIn
-              </span>
-            </Link>
-          </li>
-         
+
+          <Link href="/about">
+            <p className="hover:text-primary hover:border-primary pb-1 font-newrocker text-[19px] border-b-[2px] border-gray-200">
+              CUAL ES MI TALLE?
+            </p>
+          </Link>
+
+          <Link href="/auth">
+            <p className="hover:text-primary cursor-pointer hover:border-primary pb-1 font-newrocker text-[19px] border-b-[2px] border-gray-200">
+              LogIn
+            </p>
+          </Link>
         </div>
-      </ul>
+      </div>
     </nav>
   );
-}
+};

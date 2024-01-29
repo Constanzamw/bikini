@@ -21,20 +21,21 @@ export default function Enterizas () {
 
 
   return (
-    <div>
-      <Nav/>
-      <h1>Publicaciones de ENTERIZAS</h1>
-      <ul>
+    <div className="bg-gray-100 p-4">
+      <Nav />
+      {/* <Filters /> */}
+      <h1 className="text-4xl font-bold mb-4 text-center text-pink-400/40"> ENTERIZAS</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {publications.map(publication => (
-          <li key={publication.id}>
-            <h2>{publication.name}</h2>
-            <p>{publication.description}</p>
-            <p>Precio: {publication.price}</p>
-            <p>Talle: {publication.size}</p>
-            <img src={publication.image} alt={publication.name} style={{ maxWidth: '200px' }} />
-          </li>
+          <div key={publication.id} className="bg-white p-4 rounded-lg shadow-md">
+            <h2 className="text-xl font-bold mb-2 text-black">{publication.name}</h2>
+            <p className="mb-2 text-black">{publication.description}</p>
+            <img src={publication.image} alt={publication.name} className="max-w-full h-auto mb-2" />
+            <p className="mb-2 text-black">Precio: {publication.price}</p>
+            <p className="mb-2 text-black">Talle: {publication.size}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
-};
+}

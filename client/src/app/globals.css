@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 0, 0; /* Turquesa oscuro como color del texto */
+  --background-start-rgb: 240, 240, 240; /* Gris claro como inicio del fondo */
+  --background-end-rgb: 255, 255, 255; /* Blanco como final del fondo */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255; /* Turquesa claro como color del texto en modo oscuro */
+    --background-start-rgb: 30, 30, 30; /* Gris oscuro como inicio del fondo en modo oscuro */
+    --background-end-rgb: 30, 30, 30; /* Gris oscuro como final del fondo en modo oscuro */
   }
 }
 
