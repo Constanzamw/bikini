@@ -1,4 +1,5 @@
-const { Publication, Admin } = require("../db");
+// controllers/createPublication.js
+const { Publication, Admin, ModelGroup } = require("../db");
 
 const createPublication = async (adminId, name, description, image, price, cat, size) => {
   try {
@@ -8,6 +9,13 @@ const createPublication = async (adminId, name, description, image, price, cat, 
       throw new Error("Admin not found");
     }
 
+    // Verifica si el grupo del modelo existe, si no existe, créalo
+    let modelGroup = await ModelGroup.findOne({ where: { name } });
+    if (!modelGroup) {
+      modelGroup = await ModelGroup.create({ name });
+    }
+
+    // Crea la publicación y la asocia al grupo del modelo
     const publication = await Publication.create({
       name,
       description,
@@ -15,15 +23,14 @@ const createPublication = async (adminId, name, description, image, price, cat, 
       image,
       cat,
       size
-    })
+    });
 
-    // Asociar la publicación al admin
-    await admin.addPublication(publication);
+    await modelGroup.addPublication(publication);
 
     return "Publicación creada con éxito";
   } catch (error) {
     throw new Error(`Error creating publication: ${error.message}`);
   }
-};
+}
 
 module.exports = createPublication;

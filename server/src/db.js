@@ -14,7 +14,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 
 const sequelize = new Sequelize(
-   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/ecommerce`,
+   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/Bikinis`,
    {
       logging: false, // set to console.log to see the raw SQL queries
       native: false, // lets Sequelize know we can use pg-native for ~30% more speed
@@ -49,6 +49,7 @@ const {
   Category,
   Cart,
   Publication,
+  ModelGroup
   
 } = sequelize.models;
 
@@ -64,6 +65,9 @@ Category.belongsToMany(Publication, { through: "PublicationCategory" });
 
 Customer.hasMany(Cart);
 Cart.belongsTo(Customer);
+
+ModelGroup.hasMany(Publication);
+Publication.belongsTo(ModelGroup);
 
 module.exports = {
   ...sequelize.models,
